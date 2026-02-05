@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <title>test chismo michel ayman</title>
   <style>
-    /* Fond animé */
     body {
       font-family: Arial, sans-serif;
       color: white;
@@ -26,7 +25,6 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* Conteneur central */
     .container {
       width: 700px;
       text-align: center;
@@ -77,7 +75,7 @@
       padding: 30px;
       border-radius: 15px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-      text-align: left; /* <-- ça aligne le texte à gauche */
+      text-align: left;
     }
 
     #score {
@@ -104,20 +102,17 @@
 </head>
 <body>
   <div class="container">
-    <!-- Page d'accueil -->
     <div class="home">
       <h1>¿ERES CHISMOSO/A?</h1>
       <button class="start-btn" onclick="startQuiz()">Comenzar el cuestionario</button>
     </div>
 
-    <!-- Quiz -->
     <div class="quiz" style="display:none;">
       <h1 id="question"></h1>
       <div id="choices"></div>
       <div id="score"></div>
     </div>
 
-    <!-- Résultat -->
     <div class="result" style="display:none;">
       <h1 id="final-text"></h1>
       <div id="final-score"></div>
@@ -258,6 +253,7 @@
   </script>
 </body>
 </html>
+
 
 
 
