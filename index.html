@@ -99,7 +99,7 @@
     <!-- Page d'accueil -->
     <div class="home">
       <h1>¿ERES CHISMOSO/A?</h1>
-      <button class="start-btn" onclick="startQuiz()">Commencer le quiz</button>
+      <button class="start-btn" onclick="startQuiz()">Comenzar el cuestionario</button>
     </div>
 
     <!-- Quiz -->
@@ -241,7 +241,7 @@
         message = " Eres muy tranquilo/a y no te interesa mucho lo que hacen los demás. Cuando alguien cuenta un secreto o habla de otra persona, tú no escuchas y sigues con tu vida. No te gustan los chismes y prefieres no involucrarte en lo que no te importa.
 Tú prefieres estar en tu mundo, leer, escuchar música o pensar en tus cosas, en lugar de escuchar lo que pasa con los demás. Incluso si alguien comienza a pelear o discutir, tú te alejas o haces como que no pasa nada, porque no quieres problemas ni gastar energía en situaciones innecesarias.
 Tú eres un bot, tú no vives, parece que no existes, ¡despierta por favor!";
-      } else if(12>=score >= -6 ) {
+      } else if(score <= 12 && score >= -6) {
         message = " Eres curioso/a, pero no demasiado. Te gusta saber algunas cosas sobre tus amigos, pero no quieres involucrarte en todos los secretos. Tú lees un poco los mensajes o escuchas algunas historias, pero siempre con cuidado.
 Tú haces preguntas pequeñas como “¿Qué pasó después?” o “¿Quién dijo eso?”, pero no buscas todos los detalles. Incluso si alguien tiene un problema o pelea, tú observas o escuchas un poco, solo para entender la situación sin meterte demasiado.
 Tú eres un chico normal, no tienes nada especial, eres como todos, el resultado de tu test es aburrido para todos. No deberías haber hecho el test.
@@ -258,6 +258,7 @@ Tú exageras con la curiosidad, cálmate por favor, molestas a mucha gente. Tú 
   </script>
 </body>
 </html>
+
 
 
 
