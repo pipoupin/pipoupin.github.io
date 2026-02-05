@@ -119,21 +119,67 @@
   <script>
     const questions = [
       {
-        text: "Quelle est la capitale de la France ?",
+        text: "Estás en clase o en el trabajo y escuchas que dos personas hablan en voz baja de un compañero que no está ahí. ¿Cómo reaccionas normalmente en esta situación?",
         choices: [
-          { text: "Paris", points: 10, gif: "https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif" },
-          { text: "Lyon", points: 0, gif: "https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" },
-          { text: "Marseille", points: 0, gif: "https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif" },
-          { text: "Nice", points: 0, gif: "https://media.giphy.com/media/26tOZ42Mg6pbTUPHW/giphy.gif" }
+          { text: "Intento no escuchar y me concentro en lo que estoy haciendo, porque no me gusta hablar de personas que no están.", points: 10, gif: "https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif" },
+          { text: "Escucho un poco sin querer, pero no intento saber más ni participar en la conversación.", points: 0, gif: "https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" },
+          { text: "Escucho con mucha atención y trato de entender toda la historia porque me parece interesante.", points: 0, gif: "https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif" }
         ]
       },
       {
-        text: "Combien font 5 × 6 ?",
+        text: "En redes sociales, ves una publicación que deja entender que alguien tiene un problema personal. ¿Qué haces?",
         choices: [
-          { text: "11", points: 0, gif: "https://media.giphy.com/media/3o7TKtnuHOHHUjR38Y/giphy.gif" },
-          { text: "30", points: 10, gif: "https://media.giphy.com/media/3o7aD5tv1ogNBtDhDi/giphy.gif" },
-          { text: "56", points: -5, gif: "https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif" },
-          { text: "25", points: 2, gif: "https://media.giphy.com/media/3ohhwytHcusSCXXOUg/giphy.gif" }
+          { text: "Paso la publicación y no leo los comentarios porque respeto la vida de los demás.", points: 10, gif: "https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif" },
+          { text: "Leo algunos comentarios por curiosidad, pero no busco más información.", points: 5, gif: "https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" },
+          { text: "Leo todos los comentarios y voy a otros perfiles para saber qué ha pasado.", points: 0, gif: "https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif" }
+        ]
+      },
+      {
+        text: "¿Crees que hace falta contarle todos los detalles de tu vida a tus amigos o piensas que hay cosas que deberían quedarse privadas?",
+        choices: [
+          { text: "Sí, creo que hace falta compartir muchos detalles con los amigos, así ellos se sienten parte de nuestra vida.", points: 0, gif: "https://media.giphy.com/media/3o7TKtnuHOHHUjR38Y/giphy.gif" },
+          { text: "Solo pienso que hace falta contar las cosas importantes, no todo, porque algunas cosas son personales.", points: 10, gif: "https://media.giphy.com/media/3o7aD5tv1ogNBtDhDi/giphy.gif" },
+          { text: "No, no creo que haga falta compartir todo, cada persona tiene su espacio y privacidad.", points: 5, gif: "https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif" }
+        ]
+      },
+      {
+        text: "Estás en el metro y dos personas hablan de una infidelidad, con nombres y detalles. ¿Qué haces?",
+        choices: [
+          { text: "Me pongo los auriculares o cambio de sitio porque no quiero escuchar algo tan privado.", points: 10, gif: "https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif" },
+          { text: "Escucho un poco, pero intento no prestar mucha atención.", points: 5, gif: "https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" },
+          { text: "Escucho todo y trato de entender quién es quién en la historia.", points: 0, gif: "https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif" }
+        ]
+      },
+      {
+        text: "Un amigo te manda un mensaje: “Tengo algo muy fuerte que contarte, pero es un secreto”. ¿Cómo reaccionas?",
+        choices: [
+          { text: "Le pido que confíe en mí y que no me cuente nada si no quiere.", points: 10, gif: "https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif" },
+          { text: "Le pido que me explique por qué es importante antes de escuchar.", points: 5, gif: "https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" },
+          { text: "Le pido que me diga todo, aunque sea algo personal.", points: 0, gif: "https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif" }
+        ]
+      },
+      {
+        text: "Cuando alguien tiene un secreto o hace algo que nadie debería saber, ¿intentas descubrirlo preguntando a otros o mirando lo que hace?",
+        choices: [
+          { text: "Siempre quiero saber qué pasa, aunque no me lo digan, porque me da curiosidad.", points: 0, gif: "https://media.giphy.com/media/3o7TKtnuHOHHUjR38Y/giphy.gif" },
+          { text: "A veces intento descubrirlo, normalmente si creo que la información es interesante.", points: 5, gif: "https://media.giphy.com/media/3o7aD5tv1ogNBtDhDi/giphy.gif" },
+          { text: "No me interesa saber secretos de los demás, cada persona tiene derecho a mantenerlos.", points: 10, gif: "https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif" }
+        ]
+      },
+      {
+        text: "Si fueras invisible durante un día y pudieras escuchar o ver todo sin que se den cuenta, ¿qué harías?",
+        choices: [
+          { text: "Me gustaría escuchar todas las conversaciones de mis amigos para descubrir cosas divertidas o curiosas y luego contarlas.", points: 0, gif: "https://media.giphy.com/media/3o7TKtnuHOHHUjR38Y/giphy.gif" },
+          { text: "Solo observaría cosas interesantes o graciosas, como bromas o secretos pequeños, sin cambiar nada.", points: 5, gif: "https://media.giphy.com/media/3o7aD5tv1ogNBtDhDi/giphy.gif" },
+          { text: "No haría nada, prefiero pasar el día tranquilo y no enterarme de cosas que no debo.", points: 10, gif: "https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif" }
+        ]
+      },
+      {
+        text: "Imagina que estás en la calle y ves a dos amigos peleando para ver quién es más fuerte. Se empujan y se dan algunos golpes. ¿Qué haces?",
+        choices: [
+          { text: "Saco mi móvil, grabó la pelea y ánimo a uno de ellos, porque quiero ver quién gana y me parece emocionante.", points: 0, gif: "https://media.giphy.com/media/3o7TKtnuHOHHUjR38Y/giphy.gif" },
+          { text: "Intentó parar la pelea y les digo que se calmen, porque no quiero que se hagan daño.", points: 10, gif: "https://media.giphy.com/media/3o7aD5tv1ogNBtDhDi/giphy.gif" },
+          { text: "Me voy rápidamente, porque me aburre participar en la pelea.", points: 5, gif: "https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif" }
         ]
       }
     ];
@@ -204,3 +250,4 @@
   </script>
 </body>
 </html>
+
