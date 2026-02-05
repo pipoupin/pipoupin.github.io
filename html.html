@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mini Kahoot</title>
+  <style>
+    /* Fond animé */
+    body {
+      font-family: Arial, sans-serif;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+
+      background: linear-gradient(270deg, #6a11cb, #2575fc, #ff6a00, #ffcc00);
+      background-size: 800% 800%;
+      animation: gradientMove 15s ease infinite;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Conteneur central */
+    .container {
+      width: 450px;
+      text-align: center;
+    }
+
+    .quiz, .home, .result {
+      background: rgba(0, 0, 0, 0.25);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .choice {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 12px;
+      width: 100%;
+      background: #ffffff;
+      color: #333;
+      border: none;
+      border-radius: 10px;
+      padding: 14px;
+      margin: 10px 0;
+      cursor: pointer;
+      font-size: 16px;
+      transition: transform 0.1s, background 0.2s;
+    }
+
+    .choice img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .choice:hover {
+      background: #f1f1f1;
+      transform: scale(1.02);
+    }
+
+    #score {
+      font-size: 22px;
+      margin-top: 20px;
+    }
+
+    button.start-btn {
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 12px;
+      background: #ffcc00;
+      color: #333;
+      cursor: pointer;
+      transition: transform 0.1s, background 0.2s;
+    }
+
+    button.start-btn:hover {
+      transform: scale(1.05);
+      background: #ffd633;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Page d'accueil -->
+    <div class="home">
+      <h1>Bienvenue au Mini Kahoot !</h1>
+      <button class="start-btn" onclick="startQuiz()">Commencer le quiz</button>
+    </div>
+
+    <!-- Quiz -->
+    <div class="quiz" style="display:none;">
+      <h1 id="question"></h1>
+      <div id="choices"></div>
+      <div id="score"></div>
+    </div>
+
+    <!-- Résultat -->
+    <div class="result" style="display:none;">
+      <h1 id="final-text"></h1>
+      <div id="final-score"></div>
+    </div>
+  </div>
+
+  <script>
+    const questions = [
+      {
+        text: "Quelle est la capitale de la France ?",
+        choices: [
+          { text: "Paris", points: 10, gif: "https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif" },
+          { text: "Lyon", points: 0, gif: "https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" },
+          { text: "Marseille", points: 0, gif: "https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif" },
+          { text: "Nice", points: 0, gif: "https://media.giphy.com/media/26tOZ42Mg6pbTUPHW/giphy.gif" }
+        ]
+      },
+      {
+        text: "Combien font 5 × 6 ?",
+        choices: [
+          { text: "11", points: 0, gif: "https://media.giphy.com/media/3o7TKtnuHOHHUjR38Y/giphy.gif" },
+          { text: "30", points: 10, gif: "https://media.giphy.com/media/3o7aD5tv1ogNBtDhDi/giphy.gif" },
+          { text: "56", points: -5, gif: "https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif" },
+          { text: "25", points: 2, gif: "https://media.giphy.com/media/3ohhwytHcusSCXXOUg/giphy.gif" }
+        ]
+      }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    function startQuiz() {
+      document.querySelector('.home').style.display = 'none';
+      document.querySelector('.quiz').style.display = 'block';
+      showQuestion();
+    }
+
+    function showQuestion() {
+      const q = questions[currentQuestion];
+      document.getElementById("question").textContent = q.text;
+      const choicesDiv = document.getElementById("choices");
+      choicesDiv.innerHTML = "";
+
+      q.choices.forEach(choice => {
+        const btn = document.createElement("button");
+        btn.className = "choice";
+
+        if (choice.gif) {
+          const img = document.createElement("img");
+          img.src = choice.gif;
+          img.alt = "gif";
+          btn.appendChild(img);
+        }
+
+        const span = document.createElement("span");
+        span.textContent = choice.text;
+        btn.appendChild(span);
+
+        btn.onclick = () => selectAnswer(choice.points);
+        choicesDiv.appendChild(btn);
+      });
+    }
+
+    function selectAnswer(points) {
+      score += points;
+      currentQuestion++;
+
+      if (currentQuestion < questions.length) {
+        showQuestion();
+      } else {
+        showScore();
+      }
+    }
+
+    function showScore() {
+      document.querySelector('.quiz').style.display = 'none';
+      document.querySelector('.result').style.display = 'block';
+
+      document.getElementById('final-score').textContent = `Score final : ${score} points`;
+
+      let message = "";
+      if(score >= 15) {
+        message = "Excellent travail ! 🎉";
+      } else if(score >= 5) {
+        message = "Pas mal, tu peux faire mieux ! 🙂";
+      } else {
+        message = "Il faut réviser 😅";
+      }
+
+      document.getElementById('final-text').textContent = message;
+    }
+  </script>
+</body>
+</html>
