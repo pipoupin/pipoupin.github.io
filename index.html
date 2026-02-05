@@ -72,6 +72,14 @@
       transform: scale(1.02);
     }
 
+    .result {
+      background: rgba(0, 0, 0, 0.25);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      text-align: left; /* <-- ça aligne le texte à gauche */
+    }
+
     #score {
       font-size: 22px;
       margin-top: 20px;
@@ -245,7 +253,7 @@
         message = " Eres muy chismoso/a y quieres saberlo todo. Tú escuchas todas las conversaciones, miras los mensajes y quieres saber quién hizo qué. Siempre intentas enterarte de cada detalle y no dejas que un secreto pase desapercibido.\nTú grabas información, animas a tus amigos a contar todo y luego recuerdas o compartes lo que sabes. Incluso cuando alguien intenta ocultar algo, tú preguntas o buscas la verdad, para conocer la situación completa.<br>Tú exageras con la curiosidad, cálmate por favor, molestas a mucha gente. Tú deberías tener vergüenza.";
       }
 
-      document.getElementById('final-text').textContent = message;
+      document.getElementById('final-text').innerHTML = message.replace(/\n/g, "<br>");
     }
   </script>
 </body>
