@@ -246,11 +246,11 @@
 
       let message = "";
       if(score >= 13) {
-        message = " Eres muy tranquilo/a y no te interesa mucho lo que hacen los demás. Cuando alguien cuenta un secreto o habla de otra persona, tú no escuchas y sigues con tu vida. No te gustan los chismes y prefieres no involucrarte en lo que no te importa.\nTú prefieres estar en tu mundo, leer, escuchar música o pensar en tus cosas, en lugar de escuchar lo que pasa con los demás. Incluso si alguien comienza a pelear o discutir, tú te alejas o haces como que no pasa nada, porque no quieres problemas ni gastar energía en situaciones innecesarias.\nTú eres un bot, tú no vives, parece que no existes, ¡despierta por favor!";
+        message = "Eres muy chismoso/a y quieres saberlo todo. Tú escuchas todas las conversaciones, miras los mensajes y quieres saber quién hizo qué. Siempre intentas enterarte de cada detalle y no dejas que un secreto pase desapercibido.\nTú grabas información, animas a tus amigos a contar todo y luego recuerdas o compartes lo que sabes. Incluso cuando alguien intenta ocultar algo, tú preguntas o buscas la verdad, para conocer la situación completa.<br>Tú exageras con la curiosidad, cálmate por favor, molestas a mucha gente. Tú deberías tener vergüenza.";
       } else if(score <= 12 && score >= -6) {
         message = " Eres curioso/a, pero no demasiado. Te gusta saber algunas cosas sobre tus amigos, pero no quieres involucrarte en todos los secretos. Tú lees un poco los mensajes o escuchas algunas historias, pero siempre con cuidado.\nTú haces preguntas pequeñas como “¿Qué pasó después?” o “¿Quién dijo eso?”, pero no buscas todos los detalles. Incluso si alguien tiene un problema o pelea, tú observas o escuchas un poco, solo para entender la situación sin meterte demasiado.\nTú eres un chico normal, no tienes nada especial, eres como todos, el resultado de tu test es aburrido para todos. No deberías haber hecho el test.";
       } else {
-        message = " Eres muy chismoso/a y quieres saberlo todo. Tú escuchas todas las conversaciones, miras los mensajes y quieres saber quién hizo qué. Siempre intentas enterarte de cada detalle y no dejas que un secreto pase desapercibido.\nTú grabas información, animas a tus amigos a contar todo y luego recuerdas o compartes lo que sabes. Incluso cuando alguien intenta ocultar algo, tú preguntas o buscas la verdad, para conocer la situación completa.<br>Tú exageras con la curiosidad, cálmate por favor, molestas a mucha gente. Tú deberías tener vergüenza.";
+        message = " Eres muy tranquilo/a y no te interesa mucho lo que hacen los demás. Cuando alguien cuenta un secreto o habla de otra persona, tú no escuchas y sigues con tu vida. No te gustan los chismes y prefieres no involucrarte en lo que no te importa.\nTú prefieres estar en tu mundo, leer, escuchar música o pensar en tus cosas, en lugar de escuchar lo que pasa con los demás. Incluso si alguien comienza a pelear o discutir, tú te alejas o haces como que no pasa nada, porque no quieres problemas ni gastar energía en situaciones innecesarias.\nTú eres un bot, tú no vives, parece que no existes, ¡despierta por favor!";
       }
 
       document.getElementById('final-text').innerHTML = message.replace(/\n/g, "<br>");
@@ -258,6 +258,7 @@
   </script>
 </body>
 </html>
+
 
 
 
